@@ -1,3 +1,16 @@
+function changeBackground() {
+    const url = document.getElementById("bg-url").value.trim();
+    if (url) {
+        document.body.style.backgroundImage = `url("${url}")`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundPosition = "center";
+    } else {
+        alert("Будь ласка, вставте посилання на зображення.");
+    }
+}
+
 fetch("taxi-options.html")
     .then(res => res.text())
     .then(html => {
