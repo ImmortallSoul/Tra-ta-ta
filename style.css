@@ -81,5 +81,8 @@ button:hover {
 .taxi-card.selected {
     border: 2px solid #2e86de;
     background-color: #d6eaff;
+    background-image: url("https://mc.today/wp-content/uploads/2023/05/Uklon-Express.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
