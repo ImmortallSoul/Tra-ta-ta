@@ -1,9 +1,11 @@
 body {
-   background-image: url('https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg');
-
+    margin: 0;
+    background-image: url('https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    min-height: 100vh;
+    font-family: sans-serif;
 }
 header {
     background-color: #2e86de;
