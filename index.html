@@ -33,6 +33,15 @@
           Телефон:
           <input type="tel" id="phone" required pattern="^\+?[\d\s\-]{10,15}$" />
         </label>
+        <label>
+          Тариф:
+          <select id="tariff" required>
+            <option value="">Оберіть тариф</option>
+            <option value="econom">Економ</option>
+            <option value="comfort">Комфорт</option>
+            <option value="business">Бізнес</option>
+          </select>
+        </label>
         <button type="submit">Замовити</button>
       </form>
       <div id="confirmation" class="hidden"></div>
