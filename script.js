@@ -22,4 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
       confirmation.innerHTML = `<p style="color:red;">Будь ласка, заповніть всі поля!</p>`;
     }
   });
+
+  const navLinks = document.querySelectorAll("nav a");
+  const pages = document.querySelectorAll(".page-section");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const page = link.getAttribute("data-page");
+
+      pages.forEach(section => {
+        section.classList.add("hidden");
+      });
+
+      const activePage = document.getElementById(page);
+      activePage?.classList.remove("hidden");
+    });
+  });
 });
+
