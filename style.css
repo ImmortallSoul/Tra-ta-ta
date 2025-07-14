@@ -39,7 +39,6 @@ body {
     min-height: 100vh;
     font-family: sans-serif;
 }
-
 header {
   background-color: #ffc107;
   padding: 1em;
@@ -101,4 +100,17 @@ footer {
 
 .hidden {
   display: none;
+} 
+
+.page-section {
+  display: none;
 }
+
+.page-section.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
