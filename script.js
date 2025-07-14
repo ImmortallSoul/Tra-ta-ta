@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("taxiForm");
   const confirmation = document.getElementById("confirmation");
 
-  // Обробка форми
+
   form?.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Перемикання сторінок
   const navLinks = document.querySelectorAll("nav a");
   const pages = document.querySelectorAll(".page-section");
 
@@ -42,3 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function getTariffLabel(value) {
+  switch (value) {
+    case "econom": return "Економ";
+    case "comfort": return "Комфорт";
+    case "business": return "Бізнес";
+    default: return value;
+  }
+}
