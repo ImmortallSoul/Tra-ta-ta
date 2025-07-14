@@ -1,15 +1,3 @@
-function changeBackground() {
-    const url = document.getElementById("bg-url").value.trim();
-    if (url) {
-        document.body.style.backgroundImage = `url("${url}")`;
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundPosition = "center";
-    } else {
-        alert("https://www.google.com/url?sa=i&url=https%3A%2F%2Fmc.today%2Fuk%2Fuklon-zapustiv-u-kiyevi-novij-klas-taksi-yakim-mozhna-yizditi-smugoyu-dlya-gromadskogo-transportu%2F&psig=AOvVaw0OPVv9vzPjfdocgSUFXVAW&ust=1752603003237000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLD92Y75vI4DFQAAAAAdAAAAABA5");
-    }
-}
 
 fetch("taxi-options.html")
     .then(res => res.text())
