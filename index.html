@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Замовлення таксі</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f4f4f4; }
+    .container { background: white; padding: 2rem; max-width: 500px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    input, button { width: 100%; padding: 1rem; margin: 0.5rem 0; font-size: 1rem; }
+    button { background: #007bff; color: white; border: none; cursor: pointer; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Замовити таксі</h2>
+    <input type="text" id="pickup" placeholder="Адреса подачі" />
+    <input type="text" id="destination" placeholder="Пункт призначення" />
+    <button onclick="submitOrder()">Замовити</button>
+    <p id="confirmation"></p>
+  </div>
+
+  <script>
+    function submitOrder() {
+      const pickup = document.getElementById("pickup").value;
+      const destination = document.getElementById("destination").value;
+      if (pickup && destination) {
+        document.getElementById("confirmation").innerText =
+          `Ваше таксі з ${pickup} до ${destination} вже замовлено!`;
+      } else {
+        document.getElementById("confirmation").innerText = "Будь ласка, заповніть всі поля.";
+      }
+    }
+  </script>
+</body>
+</html>
