@@ -1,11 +1,10 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8f9fa;
-  color: #333;
-}
 
+body {
+    background-image: url('https://images.unsplash.com/photo-1606788075760-9f6f12368edb');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 header {
   background-color: #ffc107;
   padding: 1em;
