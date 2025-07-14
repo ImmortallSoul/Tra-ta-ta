@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const bgInput = document.getElementById("bg-url");
+
+    bgInput.addEventListener("input", () => {
+        const url = bgInput.value.trim();
+        if (url.startsWith("http")) {
+            document.body.style.backgroundImage = `url("${url}")`;
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundAttachment = "fixed";
+            document.body.style.backgroundPosition = "center";
+        }
+    });
+});
 
 fetch("taxi-options.html")
     .then(res => res.text())
