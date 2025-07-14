@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Замовлення таксі</title>
+  <title>Tra-ta-ta Таксі</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,11 +13,27 @@
       <a href="#" data-page="home">Головна</a>
       <a href="#" data-page="about">Про нас</a>
       <a href="#" data-page="contacts">Контакти</a>
+      <a href="#" data-page="order">Замовити таксі</a>
     </nav>
   </header>
 
   <main>
-    <section class="order-form">
+    <section data-page="home" class="page-section active">
+      <h2>Головна</h2>
+      <p>Ласкаво просимо до Tra-ta-ta Таксі!</p>
+    </section>
+
+    <section data-page="about" class="page-section">
+      <h2>Про нас</h2>
+      <p>Ми надаємо найкращий сервіс перевезень у вашому місті.</p>
+    </section>
+
+    <section data-page="contacts" class="page-section">
+      <h2>Контакти</h2>
+      <p>Зв’яжіться з нами: +380 00 000 00 00</p>
+    </section>
+
+    <section data-page="order" class="page-section">
       <h2>Замовити таксі</h2>
       <form id="taxiForm">
         <label>
@@ -30,28 +46,22 @@
         </label>
         <label>
           Телефон:
-          <input type="tel" id="phone" required pattern="^\+?[\d\s\-]{10,15}$" />
+          <input type="tel" id="phone" required pattern="^\\+?[\\d\\s\\-]{10,15}$" />
+        </label>
+        <label>
+          Тариф:
+          <select id="tariff" required>
+            <option value="">Оберіть тариф</option>
+            <option value="econom">Економ</option>
+            <option value="comfort">Комфорт</option>
+            <option value="business">Бізнес</option>
+          </select>
         </label>
         <button type="submit">Замовити</button>
       </form>
       <div id="confirmation" class="hidden"></div>
     </section>
- 
-    <section id="about" class="page-section hidden">
-      <h2>Про нас</h2>
-      <p>Tra-ta-ta Таксі — це швидко, надійно та комфортно. Ми працюємо 24/7 для вас!</p>
-    </section>
-
-    <section id="contacts" class="page-section hidden">
-      <h2>Контакти</h2>
-      <p>Телефон: +380 99 123 4567</p>
-      <p>Email: info@tratata.taxi</p>
-    </section>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Tra-ta-ta Таксі</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
