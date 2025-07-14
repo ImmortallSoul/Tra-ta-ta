@@ -1,37 +1,97 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Замовлення таксі</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 2rem; background: #f4f4f4; }
-    .container { background: white; padding: 2rem; max-width: 500px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
-    input, button { width: 100%; padding: 1rem; margin: 0.5rem 0; font-size: 1rem; }
-    button { background: #007bff; color: white; border: none; cursor: pointer; }
-    button:hover { background: #0056b3; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервіс замовлення таксі</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2e86de;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #145a92;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        main {
+            padding: 30px;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2e86de;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            background-color: #2e86de;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1b4f72;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Замовити таксі</h2>
-    <input type="text" id="pickup" placeholder="Адреса подачі" />
-    <input type="text" id="destination" placeholder="Пункт призначення" />
-    <button onclick="submitOrder()">Замовити</button>
-    <p id="confirmation"></p>
-  </div>
-
-  <script>
-    function submitOrder() {
-      const pickup = document.getElementById("pickup").value;
-      const destination = document.getElementById("destination").value;
-      if (pickup && destination) {
-        document.getElementById("confirmation").innerText =
-          `Ваше таксі з ${pickup} до ${destination} вже замовлено!`;
-      } else {
-        document.getElementById("confirmation").innerText = "Будь ласка, заповніть всі поля.";
-      }
-    }
-  </script>
+    <header>
+        <h1>Сервіс замовлення таксі</h1>
+        <p>Швидко. Зручно. Безпечно.</p>
+    </header>
+    <nav>
+        <a href="#about">Про нас</a>
+        <a href="#order">Замовити</a>
+        <a href="#contact">Контакти</a>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>Про сервіс</h2>
+            <p>Наш онлайн-сервіс дозволяє замовити поїздку в будь-який куточок міста. Просто натисніть кнопку "Замовити".</p>
+        </section>
+        <section id="order">
+            <h2>Замовити таксі</h2>
+            <p>Для замовлення таксі натисніть кнопку нижче:</p>
+            <button>Замовити</button>
+        </section>
+        <section id="contact">
+            <h2>Контакти</h2>
+            <p>Email: taxi@example.com</p>
+            <p>Телефон: +380 00 000 0000</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Сервіс замовлення таксі. Всі права захищено.
+    </footer>
 </body>
 </html>
