@@ -41,3 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function getTariffLabel(value) {
+  switch (value) {
+    case "econom": return "Економ";
+    case "comfort": return "Комфорт";
+    case "business": return "Бізнес";
+    default: return value;
+  }
+}
