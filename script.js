@@ -4,24 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   form?.addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const from = document.getElementById("from").value.trim();
-    const to = document.getElementById("to").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+  const phone = document.getElementById("phone").value;
+  const tariff = document.getElementById("tariff").value;
 
-    if (from && to && phone) {
-      confirmation.classList.remove("hidden");
-      confirmation.innerHTML = `
-        <h3>Замовлення прийнято!</h3>
-        <p>Машина скоро прибуде з <strong>${from}</strong> до <strong>${to}</strong>.</p>
-        <p>Ми зателефонуємо вам на номер <strong>${phone}</strong>.</p>
-      `;
-      form.reset();
-    } else {
-      confirmation.classList.remove("hidden");
-      confirmation.innerHTML = `<p style="color:red;">Будь ласка, заповніть всі поля!</p>`;
-    }
+  if (!from || !to || !phone || !tariff) {
+    alert("Будь ласка, заповніть усі поля!");
+    return;
+  }
+
+  confirmation.innerHTML = `
+    <p>✅ Дякуємо за замовлення!</p>
+    <p>Звідки: <strong>${from}</strong></p>
+    <p>Куди: <strong>${to}</strong></p>
+    <p>Телефон: <strong>${phone}</strong></p>
+    <p>Тариф: <strong>${getTariffLabel(tariff)}</strong></p>
+  `;
+  confirmation.classList.remove("hidden");
+  form.reset();
   });
 
   const navLinks = document.querySelectorAll("nav a");
