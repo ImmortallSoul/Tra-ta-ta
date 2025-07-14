@@ -1,42 +1,25 @@
-
-
-fetch("taxi-options.html")
-    .then(res => res.text())
-    .then(html => {
-        document.getElementById("taxi-options-container").innerHTML = html;
-    });
 document.addEventListener("DOMContentLoaded", () => {
-    const taxiCards = document.querySelectorAll(".taxi-card");
+  const form = document.getElementById("taxiForm");
+  const confirmation = document.getElementById("confirmation");
 
-    taxiCards.forEach(card => {
-        card.addEventListener("click", () => {
-            // Зняти попередній вибір
-            taxiCards.forEach(c => c.classList.remove("selected"));
-            // Виділити обране авто
-            card.classList.add("selected");
-            const selectedType = card.dataset.type;
-            console.log("Обрано тип таксі:", selectedType);
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const orderButton = document.querySelector("button");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    orderButton.addEventListener("click", () => {
-        alert("Дякуємо! Ваше замовлення прийнято.");
-    });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const taxiCards = document.querySelectorAll(".taxi-card");
+    const from = document.getElementById("from").value.trim();
+    const to = document.getElementById("to").value.trim();
+    const phone = document.getElementById("phone").value.trim();
 
-    taxiCards.forEach(card => {
-        card.addEventListener("click", () => {
-            // Зняти попередній вибір
-            taxiCards.forEach(c => c.classList.remove("selected"));
-            // Виділити обране авто
-            card.classList.add("selected");
-            const selectedType = card.dataset.type;
-            console.log("Обрано тип таксі:", selectedType);
-        });
-    });
+    if (from && to && phone) {
+      confirmation.classList.remove("hidden");
+      confirmation.innerHTML = `
+        <h3>Замовлення прийнято!</h3>
+        <p>Машина скоро прибуде з <strong>${from}</strong> до <strong>${to}</strong>.</p>
+        <p>Ми зателефонуємо вам на номер <strong>${phone}</strong>.</p>
+      `;
+      form.reset();
+    } else {
+      confirmation.classList.remove("hidden");
+      confirmation.innerHTML = `<p style="color:red;">Будь ласка, заповніть всі поля!</p>`;
+    }
+  });
 });

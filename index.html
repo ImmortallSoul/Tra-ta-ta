@@ -1,67 +1,47 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сервіс замовлення таксі</title>
-
-<link rel="stylesheet" href="style.css">
-
-   </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Замовлення таксі</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-    <header>
-        <h1>Сервіс замовлення таксі</h1>
-        <p>Швидко. Зручно. Безпечно.</p>
-    </header>
-
+  <header>
+    <h1>Tra-ta-ta Таксі</h1>
     <nav>
-        <a href="#about">Про нас</a>
-        <a href="#order">Замовити</a>
-        <a href="#contact">Контакти</a>
+      <a href="#">Головна</a>
+      <a href="#">Про нас</a>
+      <a href="#">Контакти</a>
     </nav>
+  </header>
 
-    <main>
-        <section id="about">
-            <h2>Про сервіс</h2>
-            <p>Наш онлайн-сервіс дозволяє замовити поїздку в будь-який куточок міста. Просто натисніть кнопку "Замовити".</p>
-        </section>
+  <main>
+    <section class="order-form">
+      <h2>Замовити таксі</h2>
+      <form id="taxiForm">
+        <label>
+          Звідки:
+          <input type="text" id="from" required />
+        </label>
+        <label>
+          Куди:
+          <input type="text" id="to" required />
+        </label>
+        <label>
+          Телефон:
+          <input type="tel" id="phone" required pattern="^\+?[\d\s\-]{10,15}$" />
+        </label>
+        <button type="submit">Замовити</button>
+      </form>
+      <div id="confirmation" class="hidden"></div>
+    </section>
+  </main>
 
-        <section id="order">
-            <h2>Замовити таксі</h2>
-            <p>Оберіть категорію авто:</p>
-            <div class="car-grid">
-                <div class="car-card">
-                    <img src="https://cs6.pikabu.ru/post_img/big/2015/02/17/6/1424161828_1315470413.jpg" alt="Економ">
-                    <h3>Економ</h3>
-                    <p>Доступний і зручний варіант для щоденних поїздок.</p>
-                </div>
-                <div class="car-card">
-                    <img src="https://static.jdmexport.com/wp-content/uploads/sites/9/2022/02/07104358/nissan-silvia.png" alt="Комфорт">
-                    <h3>Комфорт</h3>
-                    <p>Більше місця та зручностей для тривалих поїздок.</p>
-                </div>
-                <div class="car-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/BMW_750i_M_Sport_Package_--_01-10-2012_1.jpg/640px-BMW_750i_M_Sport_Package_--_01-10-2012_1.jpg" alt="Бізнес">
-                    <h3>Бізнес</h3>
-                    <p>Преміум авто для важливих зустрічей.</p>
-                     </div>
+  <footer>
+    <p>&copy; 2025 Tra-ta-ta Таксі</p>
+  </footer>
 
-            </div>
-            <br>
-            <button>Замовити</button>
-        </section>
-
-        <section id="contact">
-            <h2>Контакти</h2>
-            <p>Email: Tra-ta-ta@gmail.com</p>
-            <p>Телефон: +380 99 666 8164</p>
-        </section>
-    </main>
-
-    <footer>
-        &copy; 2025 Сервіс замовлення таксі. Всі права захищено.
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-</html>\
+</html>
