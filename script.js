@@ -1,58 +1,43 @@
-// Перемикання вкладок
-const navLinks = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll(".page-section");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("taxiForm");
+  const confirmation = document.getElementById("confirmation");
 
-navLinks.forEach(link => {
-  link.addEventListener("click", e => {
+
+  form?.addEventListener("submit", function (e) {
     e.preventDefault();
-    const page = link.getAttribute("data-page");
 
-    // Прибираємо active з усіх секцій
-    sections.forEach(section => {
-      section.classList.remove("active");
-    });
+    const from = document.getElementById("from").value.trim();
+    const to = document.getElementById("to").value.trim();
+    const phone = document.getElementById("phone").value.trim();
 
-    // Додаємо active до потрібної секції
-    const targetSection = document.querySelector(`section[data-page="${page}"]`);
-    if (targetSection) {
-      targetSection.classList.add("active");
+    if (from && to && phone) {
+      confirmation.classList.remove("hidden");
+      confirmation.innerHTML = `
+        <h3>Замовлення прийнято!</h3>
+        <p>Машина скоро прибуде з <strong>${from}</strong> до <strong>${to}</strong>.</p>
+        <p>Ми зателефонуємо вам на номер <strong>${phone}</strong>.</p>
+      `;
+      form.reset();
+    } else {
+      confirmation.classList.remove("hidden");
+      confirmation.innerHTML = `<p style="color:red;">Будь ласка, заповніть всі поля!</p>`;
     }
   });
+
+  const navLinks = document.querySelectorAll("nav a");
+  const pages = document.querySelectorAll(".page-section");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const page = link.getAttribute("data-page");
+
+      pages.forEach(section => {
+        section.classList.add("hidden");
+      });
+
+      const activePage = document.getElementById(page);
+      activePage?.classList.remove("hidden");
+    });
+  });
 });
-
-// Обробка форми замовлення таксі
-const form = document.getElementById("taxiForm");
-const confirmation = document.getElementById("confirmation");
-
-form?.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const from = document.getElementById("from").value;
-  const to = document.getElementById("to").value;
-  const phone = document.getElementById("phone").value;
-  const tariff = document.getElementById("tariff").value;
-
-  if (!from || !to || !phone || !tariff) {
-    alert("Будь ласка, заповніть усі поля!");
-    return;
-  }
-
-  confirmation.innerHTML = `
-    <p>✅ Дякуємо за замовлення!</p>
-    <p>Звідки: <strong>${from}</strong></p>
-    <p>Куди: <strong>${to}</strong></p>
-    <p>Телефон: <strong>${phone}</strong></p>
-    <p>Тариф: <strong>${getTariffLabel(tariff)}</strong></p>
-  `;
-  confirmation.classList.remove("hidden");
-  form.reset();
-});
-
-function getTariffLabel(value) {
-  switch (value) {
-    case "econom": return "Економ";
-    case "comfort": return "Комфорт";
-    case "business": return "Бізнес";
-    default: return value;
-  }
-}
