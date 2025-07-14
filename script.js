@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("taxiForm");
   const confirmation = document.getElementById("confirmation");
 
-  form.addEventListener("submit", function (e) {
+  form?.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const from = document.getElementById("from").value.trim();
@@ -40,4 +40,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
