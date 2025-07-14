@@ -1,8 +1,15 @@
 body {
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fmc.today%2Fuk%2Fuklon-zapustiv-u-kiyevi-novij-klas-taksi-yakim-mozhna-yizditi-smugoyu-dlya-gromadskogo-transportu%2F&psig=AOvVaw0OPVv9vzPjfdocgSUFXVAW&ust=1752603003237000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLD92Y75vI4DFQAAAAAdAAAAABA5"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+}
+
 }
 header {
     background-color: #2e86de;
