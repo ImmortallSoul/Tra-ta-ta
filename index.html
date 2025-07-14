@@ -3,37 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tra-ta-ta Таксі</title>
+  <title>Замовлення таксі</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Tra-ta-ta Таксі</h1>
     <nav>
-      <a href="#" data-page="home">Головна</a>
+      <a href="#" data-page="order-form">Головна</a>
       <a href="#" data-page="about">Про нас</a>
       <a href="#" data-page="contacts">Контакти</a>
-      <a href="#" data-page="order">Замовити таксі</a>
     </nav>
   </header>
 
   <main>
-    <section data-page="home" class="page-section active">
-      <h2>Головна</h2>
-      <p>Ласкаво просимо до Tra-ta-ta Таксі!</p>
-    </section>
-
-    <section data-page="about" class="page-section">
-      <h2>Про нас</h2>
-      <p>Ми надаємо найкращий сервіс перевезень у вашому місті.</p>
-    </section>
-
-    <section data-page="contacts" class="page-section">
-      <h2>Контакти</h2>
-      <p>Зв’яжіться з нами: +380 00 000 00 00</p>
-    </section>
-
-    <section data-page="order" class="page-section">
+    <section class="order-form page-section" id="order-form">
       <h2>Замовити таксі</h2>
       <form id="taxiForm">
         <label>
@@ -46,21 +30,12 @@
         </label>
         <label>
           Телефон:
-          <input type="tel" id="phone" required pattern="^\\+?[\\d\\s\\-]{10,15}$" />
-        </label>
-        <label>
-          Тариф:
-          <select id="tariff" required>
-            <option value="">Оберіть тариф</option>
-            <option value="econom">Економ</option>
-            <option value="comfort">Комфорт</option>
-            <option value="business">Бізнес</option>
-          </select>
+          <input type="tel" id="phone" required pattern="^\+?[\d\s\-]{10,15}$" />
         </label>
         <button type="submit">Замовити</button>
       </form>
       <div id="confirmation" class="hidden"></div>
-    
+
       <div class="promo">
         <h3>🎉 Акція: перше замовлення -10%!</h3>
       </div>
@@ -71,8 +46,38 @@
         <div class="advantage">📱 Онлайн-замовлення без очікування</div>
       </div>
     </section>
+
+    <section id="about" class="page-section hidden">
+      <h2>Про нас</h2>
+      <p>Tra-ta-ta Таксі — це швидко, надійно та комфортно. Ми працюємо 24/7 для вас!</p>
+
+      <h3>📊 Факти про нас</h3>
+      <ul>
+        <li>5 років на ринку</li>
+        <li>5000+ задоволених клієнтів</li>
+        <li>Обслуговуємо 3 міста України</li>
+      </ul>
+
+      <h3>💬 Відгуки клієнтів</h3>
+      <blockquote>"Дуже зручно! Машина приїхала за 3 хвилини." – Олена</blockquote>
+      <blockquote>"Найкращий сервіс у місті!" – Андрій</blockquote>
+
+      <h3>👥 Наша історія</h3>
+      <p>Ми почали як маленьке локальне таксі у 2020 році, і сьогодні обслуговуємо понад 1000 замовлень на місяць. Наша мета — зробити ваші поїздки комфортними та безпечними.</p>
+    </section>
+
+    <section id="contacts" class="page-section hidden">
+      <h2>Контакти</h2>
+      <p>Телефон: +380 99 123 4567</p>
+      <p>Email: info@tratata.taxi</p>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 Tra-ta-ta Таксі</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
