@@ -7,7 +7,7 @@ function changeBackground() {
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundPosition = "center";
     } else {
-        alert("Будь ласка, вставте посилання на зображення.");
+        alert("https://www.google.com/url?sa=i&url=https%3A%2F%2Fmc.today%2Fuk%2Fuklon-zapustiv-u-kiyevi-novij-klas-taksi-yakim-mozhna-yizditi-smugoyu-dlya-gromadskogo-transportu%2F&psig=AOvVaw0OPVv9vzPjfdocgSUFXVAW&ust=1752603003237000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLD92Y75vI4DFQAAAAAdAAAAABA5");
     }
 }
 
