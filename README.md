@@ -1,1 +1,2 @@
-https://immortallsoul.github.io/Tra-ta-ta/
+Над проектом працювали Коновал Роман Володимирович(ImmortallSoul) та Черненко Ярослав Олександрович(Belak32) , студенти групи КН-24002Б
+Посилання на сайт: https://immortallsoul.github.io/Tra-ta-ta/
